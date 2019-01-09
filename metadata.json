@@ -1,0 +1,23 @@
+{
+  "name": "puppet-gcpm",
+  "version": "0.0.1",
+  "author": "Michiru Kaneda",
+  "summary": "Puppet module for GCPM",
+  "license": "MIT",
+  "source": "https://github.com/mickaneda/puppet-gcpm",
+  "description": "Puppet module for GCPM",
+  "issues_url": "https://github.com/mickaneda/puppet-gcpm/issues",
+  "tags": [
+  ],
+  "project_page": "https://github.com/mickaneda/puppet-gcpm",
+  "requirements": [
+  ],
+  "operatingsystem_support": [
+  ],
+  "dependencies": [
+    {
+      "name": "puppet/python",
+      "version_requirement": ">= 2.2.0"
+    }
+  ]
+}

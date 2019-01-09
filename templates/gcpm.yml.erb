@@ -1,0 +1,51 @@
+---
+<% if @config_dir -%>
+config_dir:  <%= @config_dir %>
+<% end -%>
+<% if @oauth_file -%>
+oauth_file:  <%= @oauth_file %>
+<% end -%>
+<% if @service_account_file -%>
+service_account_file:  <%= @service_account_file %>
+<% end -%>
+project:  <%= @project %>
+zone:  <%= @zone %>
+machines:
+<% @machines.each do |machine| -%>
+  - core: <%= machine["core"] %>
+    mem: <%= machine["mem"] %>
+    disk: <%= machine["disk"] %>
+    max: <%= machine["max"] %>
+    idle: <%= machine["idle"] %>
+    image: <%= machine["image"] %>
+<% end -%>
+max_cores:  <%= @max_cores %>
+<% if @static -%>
+static:
+<% @static.each do |s| -%>
+  - <%= s %>
+<% end -%>
+<% end -%>
+prefix:  <%= @prefix %>
+preemptible:  <%= @preemptible %>
+off_timer:  <%= @off_timer %>
+<% if @network_tag -%>
+network_tag:
+<% @network_tag.each do |tag| -%>
+  - <%= tag %>
+<% end -%>
+<% end -%>
+reuse:  <%= @reuse %>
+interval:  <%= @interval %>
+head_info:  <%= @head_info %>
+head:  <%= @head %>
+port:  <%= @port %>
+domain:  <%= @domain %>
+owner:  <%= @owner %>
+wait_cmd:  <%= @wait_cmd %>
+bucket:  <%= @bucket %>
+storageClass:  <%= @storageClass %>
+location:  <%= @location %>
+log_file:  <%= @log_file %>
+log_level:  <%= @log_level %>
+service:  <%= @service %>
