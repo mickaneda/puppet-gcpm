@@ -1,15 +1,15 @@
 ---
-<% if @config_dir -%>
-config_dir:  <%= @config_dir %>
+<% if @config_dir != "" -%>
+config_dir: <%= @config_dir %>
 <% end -%>
-<% if @oauth_file -%>
-oauth_file:  <%= @oauth_file %>
+<% if @oauth_file != "" -%>
+oauth_file: <%= @oauth_file %>
 <% end -%>
-<% if @service_account_file -%>
-service_account_file:  <%= @service_account_file %>
+<% if @service_account_file != "" -%>
+service_account_file: <%= @service_account_file %>
 <% end -%>
-project:  <%= @project %>
-zone:  <%= @zone %>
+project: <%= @project %>
+zone: <%= @zone %>
 machines:
 <% @machines.each do |machine| -%>
   - core: <%= machine["core"] %>
@@ -19,33 +19,40 @@ machines:
     idle: <%= machine["idle"] %>
     image: <%= machine["image"] %>
 <% end -%>
-max_cores:  <%= @max_cores %>
-<% if @static -%>
+max_cores: <%= @max_cores %>
+<% if @static.size != 0 -%>
 static:
 <% @static.each do |s| -%>
   - <%= s %>
 <% end -%>
 <% end -%>
-prefix:  <%= @prefix %>
-preemptible:  <%= @preemptible %>
-off_timer:  <%= @off_timer %>
-<% if @network_tag -%>
+prefix: <%= @prefix %>
+preemptible: <%= @preemptible %>
+off_timer: <%= @off_timer %>
+<% if @network_tag.size != 0 -%>
 network_tag:
 <% @network_tag.each do |tag| -%>
   - <%= tag %>
 <% end -%>
 <% end -%>
-reuse:  <%= @reuse %>
-interval:  <%= @interval %>
-head_info:  <%= @head_info %>
-head:  <%= @head %>
-port:  <%= @port %>
-domain:  <%= @domain %>
-owner:  <%= @owner %>
-wait_cmd:  <%= @wait_cmd %>
-bucket:  <%= @bucket %>
-storageClass:  <%= @storageClass %>
-location:  <%= @location %>
-log_file:  <%= @log_file %>
-log_level:  <%= @log_level %>
-service:  <%= @service %>
+reuse: <%= @reuse %>
+interval: <%= @interval %>
+<% if @head_info != "" -%>
+head_info: <%= @head_info %>
+<% end -%>
+<% if @head != "" -%>
+head: <%= @head %>
+<% end -%>
+port: <%= @port %>
+domain: <%= @domain %>
+owner: <%= @owner %>
+wait_cmd: <%= @wait_cmd %>
+bucket: <%= @bucket %>
+storageClass: <%= @storageClass %>
+<% if @location != "" -%>
+location: <%= @location %>
+<% end -%>
+<% if @log_file != "" -%>
+log_file: <%= @log_file %>
+<% end -%>
+log_level: <%= @log_level %>
