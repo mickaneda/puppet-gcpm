@@ -23,7 +23,7 @@ class gcpm::params {
   $bucket       = lookup('bucket',       { default_value => ''})
   $storageClass = lookup('storageClass', { default_value => 'REGIONAL'})
   $location     = lookup('location',     { default_value => ''})
-  $log_file     = lookup('log_file',     { default_value => None})
+  $log_file     = lookup('log_file',     { default_value => ''})
   $log_level    = lookup('log_level',    { default_value => 'info'})
   $service      = lookup('service',      { default_value => true})
 }
