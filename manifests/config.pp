@@ -6,7 +6,7 @@ class gcpm::config {
   $zone         = $gcpm::zone
   $machines     = $gcpm::machines
   $max_cores    = $gcpm::max_cores
-  $static       = $gcpm::static
+  $static_wns   = $gcpm::static_wns
   $prefix       = $gcpm::prefix
   $preemptible  = $gcpm::preemptible
   $off_timer    = $gcpm::off_timer

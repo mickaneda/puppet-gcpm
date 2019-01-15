@@ -6,7 +6,7 @@ class gcpm::params {
   $zone         = lookup('zone',         { default_value => 'asia-northeast1-b'})
   $machines     = lookup('machines',     { merge => unique, default_value => []})
   $max_cores    = lookup('max_cores',    { default_value => 0})
-  $static       = lookup('static',       { merge => unique, default_value => []})
+  $static_wns   = lookup('static_wns'    { merge => unique, default_value => []})
   $prefix       = lookup('prefix',       { default_value => 'gcp-wn'})
   $preemptible  = lookup('preemptible',  { default_value => 0})
   $off_timer    = lookup('off_timer',    { default_value => 0})

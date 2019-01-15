@@ -10,6 +10,7 @@ service_account_file: <%= @service_account_file %>
 <% end -%>
 project: <%= @project %>
 zone: <%= @zone %>
+max_cores: <%= @max_cores %>
 machines:
 <% @machines.each do |machine| -%>
   - core: <%= machine["core"] %>
@@ -19,10 +20,9 @@ machines:
     idle: <%= machine["idle"] %>
     image: <%= machine["image"] %>
 <% end -%>
-max_cores: <%= @max_cores %>
-<% if @static.size != 0 -%>
-static:
-<% @static.each do |s| -%>
+<% if @static_wns.size != 0 -%>
+static_wns:
+<% @static_wns.each do |s| -%>
   - <%= s %>
 <% end -%>
 <% end -%>
