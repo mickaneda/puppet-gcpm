@@ -4,9 +4,10 @@ class gcpm::config {
   $service_account_file = $gcpm::service_account_file
   $project      = $gcpm::project
   $zone         = $gcpm::zone
-  $machines     = $gcpm::machines
   $max_cores    = $gcpm::max_cores
+  $machines     = $gcpm::machines
   $static_wns   = $gcpm::static_wns
+  $required_machines = $gcpm::required_machines
   $prefix       = $gcpm::prefix
   $preemptible  = $gcpm::preemptible
   $off_timer    = $gcpm::off_timer

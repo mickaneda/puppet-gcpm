@@ -14,16 +14,27 @@ max_cores: <%= @max_cores %>
 machines:
 <% @machines.each do |machine| -%>
   - core: <%= machine["core"] %>
-    mem: <%= machine["mem"] %>
-    disk: <%= machine["disk"] %>
-    max: <%= machine["max"] %>
-    idle: <%= machine["idle"] %>
-    image: <%= machine["image"] %>
+<% machine.each_pair do |opt, value| -%>
+<% if opt != "core" -%>
+    <%= opt %>: <%= value %>
+<% end -%>
+<% end -%>
 <% end -%>
 <% if @static_wns.size != 0 -%>
 static_wns:
 <% @static_wns.each do |s| -%>
   - <%= s %>
+<% end -%>
+<% end -%>
+<% if @required_machines.size != 0 -%>
+required_machines:
+<% @required_machines.each do |machine| -%>
+  - name: <%= machine["name"] %>
+<% machine.each_pair do |opt, value| -%>
+<% if opt != "name" -%>
+    <%= opt %>: <%= value %>
+<% end -%>
+<% end -%>
 <% end -%>
 <% end -%>
 prefix: <%= @prefix %>
